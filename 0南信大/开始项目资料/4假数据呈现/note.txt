@@ -1,0 +1,13 @@
+CircleSegmentBar数据呈现
+1.寻找控件
+2.设置CircleSegmentBar属性
+  CircleViewPadding----------2
+  WidthProgressBackGround----25
+  WidthProgressBarLine-------25
+  startPositionInDegrees-----
+  setLinearGradientProgress-线性梯度（true）
+
+  setProgress(progress);
+  setText();
+handler.removeCallbacksAndMessages(null);
+handler.postDelay

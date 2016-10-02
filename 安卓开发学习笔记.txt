@@ -1,0 +1,669 @@
+跑马灯
+输入自动匹配
+选中与未选中（自动变图片，切换背景）
+复选框
+多选一（选择成员）
+客服功能
+
+
+1.展现团队协作能力
+组名，口号，成员
+2.团队分工（数据采集，项目设计，技术顾问，项目模块，后期服务，PPT、解说）扁平化设计是现在移动互联网的发展趋势，页面嵌套三层。即一个界面呈现多种元素
+3.项目展示
+项目截图（炫酷），多说技术（专业，多），少说界面（每一个界面对应一系列知识点）
+项目的技术、技术实现：
+安卓核心控件，
+系统优化，
+第三方控件（Circle，Chart），
+百度SDK
+4.结束语
+5.感谢词
+注意：文字精简（关键词引导思路），图片生动，思路要流畅（上下知识点衔接），条理清晰
+简历：
+自我介绍，项目介绍（项目功能：站在用户角度，高层次描述），项目技术点描述（什么技术实现什么功能），技术难点以及解决方案，项目收获
+技术点，多引用成熟应用（eg.腾讯QQ使用的是（）。。。，我们使用的是。。。两者的区别是。。。多说自己方案的优缺点，优点是。。。缺点是怎么补救的，缺点对自己产品的影响）
+想面试官提问，要有技术含量，多问数据结构和算法
+网上搜下对应的面试题
+
+
+
+83921099
+adb 安卓调试桥，是链接eclipse和虚拟机的桥梁
+
+avd 是一个运行在pc端的虚拟设备，便于开发人员运行，调试Android应用程序。
+
+bin 存放应用编译后生成的可执行文件（.apk）,以及应用到被打包到apk中的资源文件
+
+res 存放应用到的所有资源，如图片布局等等
+
+layout（存放当前开发下的布局文件）主界面之类的
+
+values 存放字符串，主题，颜色，样式等资源文件
+
+AndroidManifest.xml 清单文件，配置一些与应用有关的重要信息，包含包名，权限，程序组件等等
+
+TextView 显示文本框控件
+
+EditText 输入文本框
+
+备注 <!-- -->
+wrap_content:包含实际文本内容
+match_parent:当前控件铺满父类容器
+fill_parent:当前控件铺满父类容器
+
+
+Android的ImageView属性：
+android:src="@drawable/ic_launcher"     ---ImageView的内容图像
+android:background="@drawable/ic_launcher"   ---ImageView背景图片
+android:background="#00ff00"   -----Imageview的RGB颜色0
+android:textColor="#000000"
+
+
+高度宽度单位是dp
+文字大小sp
+
+
+#f0f0f0灰色
+#0A0A0A黑色
+#000000
+
+
+@string/button_name   表示访问的是values目录下strings中的button_name。
+
+ android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+
+
+LogCat是安卓的输出控制台
+
+
+
+XML 存储数据 交换数据
+<root>
+    
+    <students>
+<student age="22" weight="62">
+    <number>201501011 </number>
+    <name>ljlkj</name>
+</student>
+    </students>
+    <teachers>
+    <student age="20"weight="60"/> <!-- 表示一条结束 -->    
+    </teachers>
+    
+</root>
+
+
+@id 引用id
+@+id 创建id
+
+android:background="@android:color/black"    //设置颜色
+        android:gravity=""     //设置居中之类的
+
+
+
+ActionBar
+
+
+
+   /*
+         * 初始化当前所需要控件，并设置监听器，通过监听器我们点击按钮要操作的事件
+         */
+        
+        loginButton =(Button)findViewById(R.id.button3);
+        
+        loginButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// 在当前按钮方法中监听点击按钮的动作
+				System.out.println("恭喜你登录成功");
+				
+				System.out.println("恭喜你登录成功");
+				
+			}
+		});
+
+
+
+
+R.java 消失了，是因为res目录下代码出错
+
+
+alt+shift+m 提取方法
+
+
+模拟器lunch失败，可能是已经被占用，可以任务管理器关闭adb.exe来重启
+
+text显示输出
+
+int month = Integer.parseInt(strMonth); 类型转换出错，会导致结果无法显示。
+
+【排错方案】
+报异常，从下到上找“cause by”，再从上往下，看哪个是自己写的代码，定位那一行
+
+
+int[] a= new int[10];
+
+int[] a= new int[]{12,121,12}
+
+int a[];
+a = new int[5];
+
+
+
+switch(score/10){
+		case 10: System.out.println("");
+		case 9:
+		case 8:
+		case 7:
+		case 6:
+		break;
+		default:
+		break;
+		}
+	
+		 System.out.println("hello world");
+
+		
+		 do{
+			 
+		 }while();
+		 
+		 for (int i = 0; i < 100; i++) {
+			
+		}
+		 for (iterable_type iterable_element : iterable) {
+			
+		}
+		}
+	
+	}
+
+ for(int i = 0;i<=32;i++){
+    	System.out.print("\""+"0"+i+"\""+",");
+    }
+
+
+再另一个类引用要 static String username;
+
+在哪个页面跳转，需要在哪个Activity写代码
+
+有时候报错需要删除重新粘贴一下
+
+
+new->other->android activity
+
+
+
+【新建布局文件】
+other --》搜xml——>activity xml layout File
+选择 Relativelayout
+
+<botton></botton>和<botton/>是不同的
+
+
+
+
+orientation（决定所有控件是横着排还是竖着排）
+
+layout_weight = 1
+
+
+visibility = gone
+
+对象是类的实例
+
+栈：对象名（先进后出）
+堆：对象内容（随机分配）
+
+ctrl+shift+f   格式化代码
+
+super.run()是重写方法中调用父类的语句
+
+
+ android:visibility="invisible" 隐藏
+
+
+return super.toString();
+
+需要在AndroidManifest注册一下复制后的界面，
+<activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+ intent.putExtra("name",username1);此中“name”必须与welcome中intent.getStringExtra("name")匹配
+
+
+id一样不会报错，但是按住ctrl会显示两个的
+无法找到id，可以clean一下。
+
+
+stu.getName()有时候set和get方法会无故报错，只需要把set和get代码删除重新粘贴保存一下即可
+
+
+ctrl+shift+Enter 向上一行空出
+shift+Enter 向下一行空出
+ctrl +alt +上下箭头 快速复制
+ctrl+shift+o 快速导包
+ctrl+d 快速删除一行
+ctrl+shift+f快速格式化代码 
+ctrl+shift+/多行注释
+ctrl+/单行注释
+
+dao所有数据
+biz用户的业务
+
+ android:theme="@android:style/Theme.Light.NoTitleBar"设置特定xml的主题
+
+listView.setAdapter(adapter);setData();出问题，会导致相应的view无法显示
+
+Log.i("标记",""+listView);   
+Log.i("标记",""+Arrays.toString(users));
+
+
+
+数组大小不可变
+
+集合：存储数据
+      大小相关
+      元素访问快效高效
+
+
+存储有序数据，通过下表来访问
+ArrayList<String> list = new ArrayList<String>();
+		list.add("张三");
+		list.add("张四");
+		list.add("张五");
+		list.add("张六");
+		
+		/*for (int i = 0; i < list.size(); i++) {//需要对遍历结果有操作
+			System.out.println(list.get(i));
+		}*/
+		
+		for(String str:list){//单纯遍历
+			System.out.println(str);
+		}
+		
+		list.remove(1);
+		
+      System.out.println(Arrays.toString(list.toArray()));//现将集合转化为数组
+		
+//		list.clear();清空
+      ArrayList<String> al= new ArrayList<String>();
+      al.add("Dota");al.add("WOW");
+      list.addAll(al);
+      System.out.println(Arrays.toString(list.toArray()));//现将集合转化为数组
+		ArrayList<Object> listObj = new ArrayList<Object>();
+	}
+}
+
+存储效率高，需要key一一对应
+
+	HashMap<String,String> hashmap = new HashMap<String, String>();
+	hashmap.put("key1","关羽");
+	hashmap.put("key2","张飞");
+	hashmap.put("key3","黄冲");
+	System.out.println(hashmap.get("key1"));//只可通过key得到数值
+	System.out.println(hashmap.containsKey("key2"));
+	hashmap.clear();
+	hashmap.containsValue("关羽");
+	hashmap.isEmpty();
+	hashmap.remove("key");
+}
+}
+
+
+public class Student {
+ 
+    private int stuId;
+    private String stuName;
+    private int stuAge;
+ 
+    public Student() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+ 
+    public Student(int stuId, String stuName, int stuAge) {
+        super();
+        this.stuId = stuId;
+        this.stuName = stuName;
+        this.stuAge = stuAge;
+    }
+ 
+    public int getStuId() {
+        return stuId;
+    }
+ 
+    public void setStuId(int stuId) {
+        this.stuId = stuId;
+    }
+ 
+    public String getStuName() {
+        return stuName;
+    }
+ 
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
+ 
+    public int getStuAge() {
+        return stuAge;
+    }
+ 
+    public void setStuAge(int stuAge) {
+        this.stuAge = stuAge;
+    }
+ 
+    public String getInfo() {
+        return "\t" + stuId + "\t" + stuName + "\t" + stuAge;
+    }
+ 
+}
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+ 
+public class StuSystem {
+ 
+    private List<Student> list = new ArrayList<Student>();
+    private Scanner input = new Scanner(System.in);
+ 
+    /**
+     * 增加学生
+     * 
+     * @param stu
+     *            Student对象
+     */
+    public void addStudent(Student stu) {
+        if (null != stu) {
+            list.add(stu);
+        }
+    }
+ 
+    /**
+     * 获取整数
+     * 
+     * @param tips
+     *            输入提示
+     * @return
+     */
+    public Integer getIntegerNumber(String tips) {
+        System.out.print(tips);
+        return input.nextInt();
+    }
+ 
+    /**
+     * 获取字符串
+     * 
+     * @param tips
+     *            输入提示
+     * @return
+     */
+    public String getString(String tips) {
+        System.out.print(tips);
+        return input.nextLine();
+    }
+ 
+    /**
+     * 显示所有学生
+     */
+    public void display() {
+        System.out.println("\n\n\tId\t姓名\t年龄");
+        if (null != list) {
+            for (int index = 0; index < list.size(); index++) {
+                System.out.println(list.get(index).getInfo());
+            }
+        }
+    }
+ 
+    /**
+     * 根据Id删除学生
+     * 
+     * @param studentId
+     *            学生Id
+     * @return
+     */
+    public boolean deleteStudentByStudentId(int studentId) {
+        if (null != list) {
+            for (int index = 0; index < list.size(); index++) {
+                if (list.get(index).getStuId() == studentId) {
+                    System.out.println("\n\n\t删除学生: "
+                            + list.get(index).getInfo() + "  成功");
+                    list.remove(index);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+ 
+    public static void main(String[] args) {
+        StuSystem stuSystem = new StuSystem();
+         
+        for (int index = 1; index <= 4; index++) {
+            Student stu = new Student(index, "stu" + index, 20 + index);
+            stuSystem.addStudent(stu);
+        }
+         
+        stuSystem.display();
+         
+        int stuId = stuSystem.getIntegerNumber("输入删除学生的ID: ");
+        boolean delete = stuSystem.deleteStudentByStudentId(stuId);
+         
+        if(!delete){
+            System.out.println("不存在该学生");
+        }else{
+            stuSystem.display();
+        }
+         
+    }
+ 
+}
+
+
+setListener(); 少了此行，会导致按钮触碰没反应
+
+
+开启eclipse项目都报错，是eclipse异常关闭引起的，可以点击windows-》perence-》查看android是否消失了四个，然后查看工程所在目录，删除.mateda
+
+Activity（Content）
+写Activity要注意：
+必须继承Activity，重写Activity方法
+清单文件必须注册
+有对应的布局文件
+如果Activity配置中拥有以下代码，表示是我们程序启动的主Activity
+
+1、startActivity( ) 
+仅仅是跳转到目标页面，若是想跳回当前页面，则必须再使用一次startActivity( )。
+2、startActivityForResult( ) 
+可以一次性完成这项任务，当程序执行到这段代码的时候，假若从T1Activity跳转到下一个Text2Activity，而当这个Text2Activity调用了finish()方法以后，程序会自动跳转回T1Activity，并调用前一个T1Activity中的onActivityResult( )方法。
+
+
+android程序直接弹错，报空指针，是因为在activity中删除了部分插件，其他部分会与其匹配，但是删除后找不到
+data.iv_splash3.setImageResource(R.drawable.point_nocheked);多了data
+
+图片无法跳转，可能是因为weather.equals("下雪")，button中android:text="下雪" ，必须匹配。
+
+
+
+先把各类item塞进PageAdapte中，
+
+
+android:scaleType="fitXY"让图片填充屏幕
+sharePreference记住第一次还是第二次登录，跳转欢迎界面
+
+requestWindowFeature(Window.FEATURE_NO_TITLE);//消除题目
+
+API接入
+API地址:http://www.tuling123.com/openapi/api
+APIkey:c3eaa6660cfc4ba09ae1ebb98ec6c49e
+secret：b3ab29bc75e249db
+
+
+Debug
+双击程序左侧，设置断点
+F5  进入方法内部
+F6  执行下一行代码
+F7  结束当前方法执行
+F8  结束当前断点执行，可以跳到下一个断点
+调试无法进行，需要clean一下，清除缓存
+
+
+android:background="@drawable/yjjc_h_b1" >背景绘制
+
+  <View
+        android:id="@+id/future_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        />中"V"要大写，否则弹出程序，activity_main报错
+
+生成方法：refactor-》Extract class
+
+
+
+JSON
+数据交换格式，类似于XML
+功能和XMl一致
+传输数据，保存数据
+JSON格式（直接读到内存中，当做字符串解析）
+{key:value,key:value}
+{"result":"1",
+"data":[{"name":"zhangfei"},
+{"name":"guanyu"}]}
+
+xml格式：
+<root>
+<result>
+1
+</result>
+<data>
+<name>zhangfei</name>
+<name>guanyu</name>
+</data>
+</root>
+
+一般移动端使用JSON解析
+数据存储采用XML
+数据交互两种都可以
+JSON适合于数据量不是特别大的（正常使用都没问题）
+XML 无论任何情况下都可以使用
+在开发android我们采用JSON
+JSON数据格式
+{} [] ： " ,
+根标签必须是一个{}（Object）[] (Array)
+User
+{"name":"zhangsan","gender":"N","weight":"62"}
+UserList
+[{"name":"zhangsan","gender":"N","weight":"62"},
+"name":"zhangsan","gender":"N","weight":"62",
+"name":"zhangsan","gender":"N","weight":"62"
+]
+
+
+模拟一段保存数据的内容
+{}
+
+
+打印",可以在前面加\
+
+
+Listview 写完
+
+{"result":"1",
+"message":"SUCCESS",
+"data":[
+{"username":"dmxy","pwd":"123"},
+{"username":"ys","pwd":"123"}
+]
+}
+//简便设置监听事件
+tv_title.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				try {
+					setWeather();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+浏览器向服务器发送请求
+安卓向服务器发送请求
+10.0.2.2即使换电脑也不用换ip
+
+流：xml字段,
+基本流：文件转化为流复制到内存中
+volley框架：字符串封装好，调用volly的API，就能把数据发送到服务端，服务端收到流，解析，得到字符串
+优点：网路请求，适合数据量小，请求频繁
+
+utils工具类
+
+框架<-lib库（完成一些列功能的库）<-各种工具类
+可扩展，可修改，可直接用
+
+
+
+
+添加城市，先设置界面布局，添加listview，添加一个title，通过include添加，EditText中输入城市名
+
+
+
+
+JDK是?Java?语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序
+
+
+是一个开放源代码的、基于Java的可扩展开发平台。
+
+下载安装Android SDK
+
+Android SDK提供了开发Android应用程序所需的API库和构建、测试和调试Android应用程序所需的开发工具
+
+为Eclipse安装ADT插件
+
+
+
+作者：马海波
+链接：http://www.zhihu.com/question/19771598/answer/12912224
+来源：知乎
+著作权归作者所有，转载请联系作者获得授权。
+
+我是每天都会看github的News Feed，一早起来第一个打开的就是它了，晚上睡觉前再看一次
+watch项目的更新内容不会看，偶尔看到熟悉的项目有人提issue了，知道答案了会回复一下；watch的好处是要使用某个插件或框架时可以在上面快速查找到
+自己的项目不管是谁commit了，都会看一遍提交的内容，有疑问的直接在上面提问(github可以关联至代码行数，非常好用)
+
+除了watch项目，在github上面更重要的是watch人，watch他之后，他所有的动作(watch哪些项目、watch哪些人，除了他对项目的commit记录)你都可以在看得到，可以极大地扩大开源视野
+
+另一个在github上做的事情就是给其他开源项目打补丁了，随着项目的发展，一定会使用到很多的开源产品，这些产品或多或少会存在一些问题，在github可以快速的打上补丁，而后发送pull request给作者，合并至官方分支
+
+github还有一个用途，例如：你开发了一个开源的jquery插件，你可以利用github page为它做一个demo页面，其他人可以很方便地看到插件的效果。而不需要像javaeye论坛那样，经常看到有人写个插件出来，再打包成zip。。。
+不少人利用github pages来托管自己的博客，而且支持顶级域名绑定。我的博客就是放在github上的，写好textile（或者其他标记语言），上传至github后会自动生成html静态文件。
+
+
+
+ctrl+shift+o   一次性导入所有包
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

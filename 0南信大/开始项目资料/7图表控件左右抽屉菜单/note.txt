@@ -1,0 +1,131 @@
+1.拷贝JAR包
+2.定义FrameLayout 背景颜色改为*FF000000
+3.拷贝显示的方法
+添加测试数据
+new double[] { 32, 35, 28, 32, 32, 34, 27 }
+new double[] { 24, 26, 18, 20, 24, 26, 20 }
+/**
+	 * 绘制未来天气走势图，添加到容器中
+	 * FIXME
+	 * @param chartContainer2
+	 */
+	private void initChart(FrameLayout chartContainer2,double[] days,double[] nights) {
+		//设置文字显示
+		String[] titles = new String[] { "最高温度", "最低温度" };
+		List<double[]> x = new ArrayList<double[]>();
+		for (int i = 0; i < titles.length; i++) {
+			x.add(new double[] { 1, 2, 3, 4, 5, 6, 7 });
+		}
+		List<double[]> values = new ArrayList<double[]>();
+
+		/*
+		 * List<Weather> list = weather.getResult().getData().getWeather();
+		 * for(int i=0;i<list.size();i++){ days[i] =
+		 * Double.parseDouble(list.get(i).getInfo().getDay().get(2)); nights[i]
+		 * = Double.parseDouble(list.get(i).getInfo().getNight().get(2)); }
+		 */
+		values.add(days);
+		values.add(nights);
+		int[] colors = new int[] { Color.GREEN, Color.YELLOW };
+		PointStyle[] styles = new PointStyle[] { PointStyle.DIAMOND,
+				PointStyle.SQUARE };
+
+		XYMultipleSeriesRenderer renderer = buildRenderer(colors, styles);
+
+		int length = renderer.getSeriesRendererCount();
+		for (int i = 0; i < length; i++) {
+			// 设置每条折线的“点”是实心的
+			((XYSeriesRenderer) renderer.getSeriesRendererAt(i))
+					.setFillPoints(true);
+		}
+
+		setChartSettings(renderer, "温度走势", "未来七天", "温度", 0.5, 7.5, -10, 40,
+				Color.LTGRAY, Color.LTGRAY);
+
+		// x轴上面放多少个Label
+		renderer.setXLabels(7);
+		renderer.setYLabels(10);
+		renderer.setShowGrid(true);
+		renderer.setXLabelsAlign(Align.RIGHT);
+		renderer.setYLabelsAlign(Align.RIGHT);
+		// 右下角设置放大缩小的
+		// renderer.setZoomButtonsVisible(true);
+		// renderer.setPanLimits(new double[] { -10, 20, -10, 40 });
+		// renderer.setZoomLimits(new double[] { -10, 20, -10, 40 });
+
+		XYMultipleSeriesDataset dataset = buildDataset(titles, x, values);
+		// XYSeries series = dataset.getSeriesAt(0);
+		// series.addAnnotation("Vacation", 6, 30);
+		View chart = ChartFactory.getLineChartView(this, dataset, renderer);
+		chartContainer2.addView(chart);
+	}
+
+	private XYMultipleSeriesDataset buildDataset(String[] titles,
+			List<double[]> xValues, List<double[]> yValues) {
+		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+		addXYSeries(dataset, titles, xValues, yValues, 0);
+		return dataset;
+	}
+
+	private void addXYSeries(XYMultipleSeriesDataset dataset, String[] titles,
+			List<double[]> xValues, List<double[]> yValues, int scale) {
+
+		int length = titles.length;
+		for (int i = 0; i < length; i++) {
+			XYSeries series = new XYSeries(titles[i], scale);
+			double[] xV = xValues.get(i);
+			double[] yV = yValues.get(i);
+			int seriesLength = xV.length;
+			for (int k = 0; k < seriesLength; k++) {
+				series.add(xV[k], yV[k]);
+			}
+			dataset.addSeries(series);
+		}
+	}
+
+	private void setChartSettings(XYMultipleSeriesRenderer renderer,
+			String title, String xTitle, String yTitle, double xMin,
+			double xMax, double yMin, double yMax, int axesColor,
+			int labelsColor) {
+		renderer.setChartTitle(title);
+		renderer.setXTitle(xTitle);
+		renderer.setYTitle(yTitle);
+		renderer.setXAxisMin(xMin);
+		renderer.setXAxisMax(xMax);
+		renderer.setYAxisMin(yMin);
+		renderer.setYAxisMax(yMax);
+		renderer.setAxesColor(axesColor);
+		renderer.setLabelsColor(labelsColor);
+	}
+
+	private XYMultipleSeriesRenderer buildRenderer(int[] colors,
+			PointStyle[] styles) {
+		XYMultipleSeriesRenderer renderer = new XYMultipleSeriesRenderer();
+		setRenderer(renderer, colors, styles);
+		return renderer;
+	}
+
+	private void setRenderer(XYMultipleSeriesRenderer renderer, int[] colors,
+			PointStyle[] styles) {
+		// 设置X Y 轴标题的字体的大小
+		renderer.setAxisTitleTextSize(16);
+		// 图表的标题文字大小
+		renderer.setChartTitleTextSize(20);
+		// x y 轴上数字的大小
+		renderer.setLabelsTextSize(15);
+		// 图例的文字大小
+		renderer.setLegendTextSize(15);
+		// 折线图“点”的大小
+		renderer.setPointSize(5f);
+		// 设置图表的边距
+		renderer.setMargins(new int[] { 20, 30, 15, 20 });
+
+		int length = colors.length;
+		for (int i = 0; i < length; i++) {
+			XYSeriesRenderer r = new XYSeriesRenderer();
+			r.setColor(colors[i]);
+			r.setPointStyle(styles[i]);
+			r.setDisplayChartValues(true);
+			renderer.addSeriesRenderer(r);
+		}
+	}

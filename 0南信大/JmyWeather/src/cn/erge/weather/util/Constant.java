@@ -1,0 +1,24 @@
+package cn.erge.weather.util;
+/**
+ * 五节位控制法
+ * 一位         ACT   Control
+ * 二三位    Type  Control
+ * 三四位    Event Control
+ * @author k
+ *
+ */
+public interface Constant {
+	int MAIN_ACT_GET_WEATHER_SUCCESS=0x00100; 
+	int MAIN_ACT_GET_WEATHER_ERROR=0x00200;
+	int MAIN_ACT_GET_WEATHER_SUCCESS_EXTROL1=0x00201; 
+	int MAIN_ACT_GET_WEATHER_SUCCESS_EXTROL2=0x00202; 
+	int SEL1_ACT_GET_CITY_SUCCESS=0x10100;
+	int SEL1_ACT_GET_CITY_ERROR=0x10200;
+	int SEL1_ACT_GET_CITY_ERROR1=0x10201;
+	int SEL1_ACT_GET_CITY_ERROR2=0x10202;
+	int SEL2_ACT_GET_CITY_SUCCESS=0x20100;
+	int SEL2_ACT_GET_CITY_ERROR=0x20200;
+	int SEL2_ACT_GET_CITY_ERROR1=0x20201;
+	int SEL2_ACT_GET_CITY_ERROR2=0x20202;
+	
+}

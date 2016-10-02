@@ -1,0 +1,31 @@
+1.获取需要解析的字符串，转化为流
+	public InputStream getStringStream(String sInputString) {
+		if (sInputString != null && !sInputString.trim().equals("")) {
+			try {
+				ByteArrayInputStream tInputStringStream = new ByteArrayInputStream(
+						sInputString.getBytes());
+				return tInputStringStream;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return null;
+	}
+2.获取解析器对象
+XmlPullParser xpp = Xml.newPullParser();
+3.设置数据
+ xpp.setInput(getStringStream(xml), "UTF-8"); 
+4.开始解析
+//获得标签类型
+ int eventType=xpp.getEventType()
+//标签类型
+ XmlPullParser.START_TAG      开始标签
+ XmlPullParser.END_TAG        结束标签
+ xpp.getName()    获取标签名字
+ xpp.next()       移向下一个区域
+    例如<name>na</name>移动三次
+ xpp.getText()    得到标签内容
+ 
+ 
+
+

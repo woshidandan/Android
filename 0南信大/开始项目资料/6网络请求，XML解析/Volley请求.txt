@@ -1,0 +1,29 @@
+1添加权限
+<uses-permission android:name="android.permission.INTERNET" />  
+-----------------------------
+
+获得请求对象：
+RequestQueue mQueue = Volley.newRequestQueue(context); 
+
+两种请求方式：
+----------get-------------------------------------------------------------------------------
+StringRequest stringRequest = new StringRequest(url,listener, errorListener); 
+mQueue.add(stringRequest);  
+----------post------------------------------------------------------------------------------
+StringRequest stringRequest = new StringRequest(Method.POST, url,  listener, errorListener){
+    @Override  
+    protected Map<String, String> getParams() throws AuthFailureError {  
+        Map<String, String> map = new HashMap<String, String>();  
+        map.put("params1", "value1");  
+        map.put("params2", "value2");  
+        return map;  
+    }  
+};
+
+
+
+
+
+
+
+

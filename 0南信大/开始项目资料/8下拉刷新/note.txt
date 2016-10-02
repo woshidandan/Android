@@ -1,0 +1,28 @@
+解压，导入到工作空间。
+添加依赖
+com.handmark.pulltorefresh.library.PullToRefreshListView
+设置分割线
+android:divider="#00000000"
+点击item没有效果
+android:listSelector="#00000000" 
+寻找控件find
+设置只能下拉
+setMode(Mode.PULL_FROM_START);
+获得对应的listView
+getRefreshableView()
+设置下拉刷新监听器
+ptrListView.setOnRefreshListener
+设置下拉后显示样式
+String label = DateUtils.formatDateTime(
+						getApplicationContext(), System.currentTimeMillis(),
+						DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE
+								| DateUtils.FORMAT_ABBREV_ALL);
+				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
+
+设置刷新完成
+onRefreshComplete();
+
+给ListView添加头View，即weather_layout
+list.setCacheColorHint(R.color.transparent)
+getLayout().inflate()...
+设置适配器：ArrayAdapter  android.R.layout.simple_list...
